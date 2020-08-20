@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+        1. 我们先来让这个图片垂直方向居中
+        2. 在这个demo的div里面，肉眼可见的字母x和图片存在于一个行框内
+        3. 我们想让图片垂直方向居中，先来试试 给图片设置一个 vertical-align: middle;
+        4. 发现好像没起作用，那么再试试给span x设置 vertical-align: middle; 还是不行
+        5. 妈蛋，刚开始就这么难
+        6. 原因就是 上面的那句话，给标红一下
+        7. 现在我们让行框盒子的基线往上1/2处就是这个黄色背景区域的中间位置，给demo设置 line-height: 600px;
+        8. 这个时候看着图片貌似居中了，可是稍微有点偏下，
+        没关系，我们把font-size设置的小一点，欺骗一下自己，font-size: 12px; 
+        好像还有点偏下，再设置成font-size: 0px; 感觉很完美
+        9. 
+        1. 回顾middle是怎么对齐的，内联元素：元素的垂直中心点和行框盒子基线往上1/2 x-height 处对齐
+         */
+    </script>
+    <style>
+        @font-face {
+            font-family: "Ya Hei";
+            src: url("./fontFile/WeiRuanYaHeiTi/WeiRuanYaHei-1.ttf") format("ttf");
+        }
+        body {
+            font-family: "Ya Hei";
+        }
+        .demo {
+            font-size: 100px;
+            height: 600px;
+            background-color: bisque;
+        }
+
+
+    </style>
+</head>
+<body>
+    <i>内联元素：元素的垂直中心点和行框盒子基线往上1/2 x-height 处对齐</i>
+    <div class="demo">
+        x<span>x</span>
+        <img  src="./a.png"/>
+    </div>
+</body>
+</html>

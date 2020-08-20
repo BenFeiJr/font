@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+        1. 可以看到图片下方有点空隙，为什么有空隙呢？之前分享讲了是因为空白节点的问题；
+        2. 我们来直观的展示一下，放开注释的x
+        2. 那么怎么去掉这个空隙呢，之前的做法是给这个demo里面的字体都设置一个远小于字体大小的line-height: 0px;
+        3. 之前分享的时候没有拿捏准这个远小于的度，反正设置为0，准不会出错。
+        4. 那么我们今天就来探究一下，设置为多少的时候会刚刚好没有空隙
+        9. 
+         */
+    </script>
+    <style>
+        @font-face {
+            font-family: "Ya Hei";
+            src: url("./fontFile/WeiRuanYaHeiTi/WeiRuanYaHei-1.ttf") format("ttf");
+        }
+        body {
+            font-family: "Ya Hei";
+        }
+        .demo {
+            font-size: 100px;
+            background-color: bisque;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <span>x</span>
+        <img  src="./a.png"/>
+    </div>
+</body>
+</html>
