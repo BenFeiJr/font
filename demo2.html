@@ -11,6 +11,12 @@
         2. 那么怎么去掉这个空隙呢，之前的做法是给这个demo里面的字体都设置一个远小于字体大小的line-height: 0px;
         3. 之前分享的时候没有拿捏准这个远小于的度，反正设置为0，准不会出错。
         4. 那么我们今天就来探究一下，设置为多少的时候会刚刚好没有空隙
+        5. 要知道设置为多少会没有，就要先知道空隙是怎么产生的？
+        6. 为了简单直观，我们自己设计一套字体（讲一下css里面em square base-line对应哪些）
+        7. 设计完了之后，刷新页面，感觉像是下面的descent
+        8. 做一个计算公式，
+
+
         9. 
          */
     </script>
@@ -19,8 +25,12 @@
             font-family: "Ya Hei";
             src: url("./fontFile/WeiRuanYaHeiTi/WeiRuanYaHei-1.ttf") format("ttf");
         }
+        @font-face {
+            font-family: "Test";
+            src: url("./fontFile/test.woff") format("woff");
+        }
         body {
-            font-family: "Ya Hei";
+            font-family: "Test";
         }
         .demo {
             font-size: 100px;
@@ -32,7 +42,7 @@
 </head>
 <body>
     <div class="demo">
-        <span>x</span>
+        <!-- <span>x</span> -->
         <img  src="./a.png"/>
     </div>
 </body>
